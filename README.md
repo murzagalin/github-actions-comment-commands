@@ -7,4 +7,4 @@ I've written an informative article on how to automate GitHub Actions using cust
 If you have any questions or suggestions, don't hesitate to reach out:
 
 - Email: azamat.em@gmail.com
-- LinkedIn: [Link]([https://www.linkedin.com/in/yourlinkedinprofile/](https://www.linkedin.com/in/azamat-murzagalin-813268b2/)https://www.linkedin.com/in/azamat-murzagalin-813268b2/)
+- LinkedIn: [Link](https://www.linkedin.com/in/azamat-murzagalin-813268b2/)

@@ -4,15 +4,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class FailingTests {
+public class FailTests {
 
     @Test
-    void failingTest1() {
+    void failingTestOne() {
         assertEquals(1, 1 + 1);
     }
 
     @Test
-    void failingTest2() {
+    void failingTestTwo() {
         assertEquals(2, 1 + 2);
     }
 }

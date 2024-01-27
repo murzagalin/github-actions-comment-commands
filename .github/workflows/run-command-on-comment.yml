@@ -20,7 +20,8 @@ jobs:
       - name: Check if the comment contains the run command
         id: check_comment
         run: |
-          command=$(echo ${{ github.event.comment.body }} | grep -oE '\$run: (.+)' | cut -d ' ' -f 2-)
+          echo "the comment is `${{ github.event.comment.body }}`"
+          command=$(echo "${{ github.event.comment.body }}" | grep -oE '\$run: (.+)' | cut -d ' ' -f 2-)
           echo "the command to run is `$command`"
           echo "command=$command" >> $GITHUB_OUTPUT
 

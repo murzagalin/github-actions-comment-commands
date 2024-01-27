@@ -10,4 +10,9 @@ class FailingTests {
     void failingTest() {
         assertEquals(1, 1 + 1);
     }
+
+    @Test
+    void failingTestTwo() {
+        assertEquals(1, 1 + 1);
+    }
 }

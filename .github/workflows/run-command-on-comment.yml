@@ -1,0 +1,28 @@
+name: Run Command on Comment
+
+on:
+  issue_comment:
+    types:
+      - created
+
+jobs:
+  process_comment:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'corretto'
+          java-version: '17'
+
+      - name: Check if the comment contains the run command
+        id: check_comment
+        run: |
+          command=$(echo ${{ github.event.comment.body }} | grep -oE '\$run: (.+)' | cut -d ' ' -f 2-)
+          echo "::set-output name=command::$command"
+
+      - name: Execute the command
+        if: steps.check_comment.outputs.command != ''
+        run: ${{ steps.check_comment.outputs.command }}

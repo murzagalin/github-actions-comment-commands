@@ -22,8 +22,10 @@ jobs:
         run: |
           comment='${{ github.event.comment.body }}'
           echo "the comment is '$comment'"
+          
           command=$(echo $comment | grep -oE '\$run: (.+)' | cut -d ' ' -f 2-)
           echo "the command to run is '$command'"
+          
           echo "command=$command" >> $GITHUB_OUTPUT
 
       - name: Execute the command

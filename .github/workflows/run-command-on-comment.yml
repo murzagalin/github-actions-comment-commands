@@ -21,7 +21,8 @@ jobs:
         id: check_comment
         run: |
           command=$(echo ${{ github.event.comment.body }} | grep -oE '\$run: (.+)' | cut -d ' ' -f 2-)
-          echo "::set-output name=command::$command"
+          echo "the command to run is `$command`"
+          echo "command=$command" >> $GITHUB_OUTPUT
 
       - name: Execute the command
         if: steps.check_comment.outputs.command != ''
